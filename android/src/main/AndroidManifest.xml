@@ -1,0 +1,61 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.zzstc.cloud_push">
+
+    <application>
+        <service
+            android:name=".CloudPushIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_REMOVED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.alibaba.sdk.android.push.RECEIVE" />
+            </intent-filter>
+        </service>
+        <activity
+            android:name=".PopupPushActivity"
+            android:exported="true" />
+        <meta-data
+            android:name="com.alibaba.app.appkey"
+            android:value="${PUSH_APP_KEY}" /> <!-- 请填写你自己的- appKey -->
+        <meta-data
+            android:name="com.alibaba.app.appsecret"
+            android:value="${PUSH_APP_SECRET}" /> <!-- 请填写你自己的appSecret -->
+        <meta-data
+            android:name="com.huawei.hms.client.appid"
+            android:value="appid=${HUAWEI_APP_ID}" />
+        <meta-data
+            android:name="com.xiaomi.push.client.app_id"
+            android:value="xiaomi_${XIAOMI_APP_ID}" />
+        <meta-data
+            android:name="com.xiaomi.push.client.app_key"
+            android:value="xiaomi_${XIAOMI_APP_KEY}" />
+        <meta-data
+            android:name="com.oppo.push.client.app_key"
+            android:value="oppo_${OPPO_APP_KEY}" />
+        <meta-data
+            android:name="com.oppo.push.client.app_secret"
+            android:value="oppo_${OPPO_APP_SECRET}" />
+        <meta-data
+            android:name="com.vivo.push.app_id"
+            android:value="${VIVO_APP_ID}" />
+        <meta-data
+            android:name="com.vivo.push.api_key"
+            android:value="${VIVO_APP_KEY}" />
+        <meta-data
+            android:name="com.meizu.push.app_id"
+            android:value="meizu_${MEIZU_APP_ID}" />
+        <meta-data
+            android:name="com.meizu.push.app_key"
+            android:value="meizu_${MEIZU_APP_KEY}" />
+        <meta-data
+            android:name="com.gcm.push.send_id"
+            android:value="gcm_${GCM_SEND_ID}" />
+        <meta-data
+            android:name="com.gcm.push.app_id"
+            android:value="gcm_${GCM_APP_ID}" />
+    </application>
+</manifest>
